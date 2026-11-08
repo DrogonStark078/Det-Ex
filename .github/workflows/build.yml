@@ -30,8 +30,8 @@ jobs:
       - name: Make Wrapper Executable
         run: chmod +x gradlew
 
-      - name: Build Debug APK with Gradlew
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon -Pandroid.suppressUnsupportedCompileSdk=35
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
